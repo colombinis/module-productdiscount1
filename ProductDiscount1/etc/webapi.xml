@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/sacsi-productdiscount1/discount" method="POST">
+		<service class="Sacsi\ProductDiscount1\Api\DiscountRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Sacsi_ProductDiscount1::Discount_save"/>
+		</resources>
+	</route>
+	<route url="/V1/sacsi-productdiscount1/discount/search" method="GET">
+		<service class="Sacsi\ProductDiscount1\Api\DiscountRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Sacsi_ProductDiscount1::Discount_view"/>
+		</resources>
+	</route>
+	<route url="/V1/sacsi-productdiscount1/discount/:discountId" method="GET">
+		<service class="Sacsi\ProductDiscount1\Api\DiscountRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Sacsi_ProductDiscount1::Discount_view"/>
+		</resources>
+	</route>
+	<route url="/V1/sacsi-productdiscount1/discount/:discountId" method="PUT">
+		<service class="Sacsi\ProductDiscount1\Api\DiscountRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Sacsi_ProductDiscount1::Discount_update"/>
+		</resources>
+	</route>
+	<route url="/V1/sacsi-productdiscount1/discount/:discountId" method="DELETE">
+		<service class="Sacsi\ProductDiscount1\Api\DiscountRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Sacsi_ProductDiscount1::Discount_delete"/>
+		</resources>
+	</route>
+</routes>

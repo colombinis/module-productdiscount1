@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Sacsi\ProductDiscount1\Api\DiscountRepositoryInterface" type="Sacsi\ProductDiscount1\Model\DiscountRepository"/>
+	<preference for="Sacsi\ProductDiscount1\Api\Data\DiscountInterface" type="Sacsi\ProductDiscount1\Model\Data\Discount"/>
+	<preference for="Sacsi\ProductDiscount1\Api\Data\DiscountSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Sacsi\ProductDiscount1\Model\ResourceModel\Discount\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">sacsi_productdiscount1_discount</argument>
+			<argument name="resourceModel" xsi:type="string">Sacsi\ProductDiscount1\Model\ResourceModel\Discount\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="sacsi_productdiscount1_discount_listing_data_source" xsi:type="string">Sacsi\ProductDiscount1\Model\ResourceModel\Discount\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

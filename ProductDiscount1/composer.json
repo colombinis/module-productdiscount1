@@ -1,0 +1,22 @@
+{
+    "name": "colombinis/module-productdiscount1",
+    "description": "Data that will relate a customer with a product and a specific discount amount. The data needs to be push from an external platform to the Magento platform",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mage2Gen",
+            "email": "info@mage2gen.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Sacsi\\ProductDiscount1\\": ""
+        }
+    }
+}
